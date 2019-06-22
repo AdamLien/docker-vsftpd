@@ -1,4 +1,4 @@
-version: "3"
+version: "2"
 
 services:
 
@@ -10,6 +10,11 @@ services:
         USER_ID: 1000
         GROUP_ID: 1000
     restart: always
+    privileged: true
+    environment:
+      - PASV_ADDRESS_ENABLE=NO
+#      - PASV_ADDRESS=35.221.187.247
+      - PASV_ADDRESS=0.0.0.0
     ports:
       - 0.0.0.0:20:20
       - 0.0.0.0:21:21
